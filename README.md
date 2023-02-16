@@ -1,6 +1,6 @@
 # Thesis methods
 
-
+The main goal of this repository is to show the persons that read my PhD disertation how the computational analyses were done. In general, the scripts have commented code inside them, so everyone can follow what the scripts are doing. Also in the Materials and methods section, what every script does is explained.
 
 ## Getting started
 
