@@ -1,6 +1,6 @@
 # Thesis methods
 
-The main goal of this repository is to show the persons that read my PhD disertation how the computational analyses were done. In general, the scripts have commented code inside them, so everyone can follow what the scripts are doing. Also in the Materials and methods section, what every script does is explained.
+The main goal of this repository is to show the persons that read my PhD dissertation how the computational analyses were done. The scripts have commented code inside them, so everyone can follow what the scripts are doing. Also, the Materials and Methods section explains what every script does.
 
 
 
@@ -16,13 +16,13 @@ The main goal of this repository is to show the persons that read my PhD diserta
 
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+State if you are open to contributions and your requirements for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+For people who want to make changes to your project, it's helpful to have documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires an external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
+## Authors and acknowledgement
 Show your appreciation to those who have contributed to the project.
 
 ## License
