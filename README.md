@@ -27,6 +27,12 @@ conda activate ATAC_env
 
 With these steps, you have loaded all the necessary programs to reproduce all our ATAC-seq analyses.
 
+## Contents
+
+### ATAC-seq analysis
+In this folder you can find all the scripts necesary to reproduce ATAC-seq analyses. 
+
+
 
 ## Authors and acknowledgement
 The main author of this repository is Alejandro Gil (agilgal AT upo DOT es agilgal@upo.es)
