@@ -1,0 +1,15 @@
+name: RNA_env
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - samtools
+  - star
+  - bedtools
+  - ucsc-wigtobigwig
+  - deeptools
+  - htseq
+  - kallisto
+  - fastqc
+prefix: /home/ska/agilgal/programs/miniconda3/envs/RNA_env
