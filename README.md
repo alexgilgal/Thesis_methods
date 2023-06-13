@@ -9,21 +9,29 @@ The main goal of this repository is to show the persons that read my PhD dissert
 
 
 ## Installation
+The use of the scripts requires several programs in order to run properly and reproduce the results. In order to save the user the tedious installation processes and the searching of the programs manually, we have generated conda recipes. These conda recipes can be used directly by users in order to generate ready-to-analyse conda environments. The only thing the user has to change from these recipes are the prefix variables.
 
+If you don't have Conda installed, we recommend using Anaconda (or Miniconda) to start. Check [this link](https://docs.conda.io/en/latest/miniconda.html) to install conda from Miniconda. 
 
-## Usage
+In each folder of the different analyses, there are YML files that contain these recipes.
 
+Creating the environment for the ATAC-seq would be like this 
+```
+conda env create -f ATAC_env.yml
+```
+Once you have created the environment, do not forget to activate the environment with:
 
+```
+conda activate ATAC_env
+```
 
-## Contributing
-State if you are open to contributions and your requirements for accepting them.
+With these steps, you have loaded all the necessary programs to reproduce all our ATAC-seq analyses.
 
-For people who want to make changes to your project, it's helpful to have documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires an external setup, such as starting a Selenium server for testing in a browser.
 
 ## Authors and acknowledgement
-Show your appreciation to those who have contributed to the project.
+The main author of this repository is Alejandro Gil (agilgal AT upo DOT es agilgal@upo.es)
+Some scripts and code come from diverse persons from my lab, like Juan J. Tena (ATAC_pipe.pl) or Alberto Perez Posadas.
+
 
 ## License
 MIT License
