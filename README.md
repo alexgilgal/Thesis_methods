@@ -30,7 +30,19 @@ With these steps, you have loaded all the necessary programs to reproduce all ou
 ## Contents
 
 ### ATAC-seq analysis
-In this folder you can find all the scripts necesary to reproduce ATAC-seq analyses. 
+In this folder you can find all the scripts necesary to reproduce ATAC-seq analyses. If you intend to use these scripts, please see above how to install the corresponding conda recipes.
+
+These scripts should be used in the following order (this is a suggestion):
+
+- **ATAC_pipe.pl:** This is our pipeline to map raw ATAC-seq and preprocess this data.
+- **idr_mod_job.sh**: This script identifies reproducible peaks between samples.
+- **ATAC_deseq2.R**: Using this script, the user can determine which peaks are differential between different conditions.
+- **homer_enrichment.sh**: This script can be used with any BED file, but we used it mainly with the differential peaks from the previous script. This provides the user with the enrichment analysis of TFBS in the regions of interests.
+- **combine_homer.R**: this script joints several Homer results in one dotplot for easy visualization of those results.
+
+Independently, the user can use script CRISP_calling.sh in order to call variants in ATAC-seq signal. Then the user can run the scripts inside the folder Motifbreak_tobias in order to understand how these variants affect TFBS and Tf binding to the DNA in certain conditions.
+
+
 
 
 
