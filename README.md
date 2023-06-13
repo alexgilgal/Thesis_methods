@@ -29,7 +29,7 @@ With these steps, you have loaded all the necessary programs to reproduce all ou
 
 ## Contents
 
-### ATAC-seq analysis
+#### **ATAC-seq analysis**
 In this folder you can find all the scripts necesary to reproduce ATAC-seq analyses. If you intend to use these scripts, please see above how to install the corresponding conda recipes.
 
 These scripts should be used in the following order (this is a suggestion):
