@@ -1,0 +1,10 @@
+AstMex_Pachon_clean_head.fa Astmex102 Ensembl
+AstMex_Surface.fa AstMex2.0	Ensembl(mod)
+Clupea_harengus.Ch_v2.0.2.dna_sm.toplevel.fa.gz     GCA_904425465.1	Genbank http://ftp.ensembl.org/pub/release-104/fasta/clupea_harengus/dna/Clupea_harengus.Ch_v2.0.2.dna_sm.toplevel.fa.gz
+Oryzias_latipes_hsok.ASM223469v1.dna_sm.toplevel.fa.gz ASM223471v1 Ensembl
+Esox_lucius.Eluc_v4.dna_sm.toplevel.fa.gz	Eluc_v4	Ensembl
+GCA_015220715.1_fPygNat1.pri_genomic.fna.gz	PygNat1	NCBI
+GCA_009078355.1_GENO_Phyp_1.0_genomic.fna.gz	GENO_Phyp_1.0	NCBI
+GCA_013358815.1_fEleEle1.pri_genomic.fna.gz	fEleEle1	NCBI
+Sinocyclocheilus_grahami.SAMN03320097.WGS_v1.1.dna_sm.toplevel.fa.gz	Golden line barbel	Ensembl
+Danrer10	danrer10	UCSC

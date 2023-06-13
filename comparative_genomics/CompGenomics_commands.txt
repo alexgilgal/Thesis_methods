@@ -1,0 +1,42 @@
+Before I have splited the genome by chromosome. The I used this to extract maf files
+
+for i in $(ls *bed); do echo $i; hal2maf --refGenome Danio_rerio --refTargets $i ../Cavefish_align.hal ${i:0:(-4)}_danrer10_reference.maf & done
+
+# IMPORTANT: BEFORE CONVERTING TO SS YOU NEED TO MAKE SURE THE MAF FILE DOESN'T HAVE THE F****** TREE BECAUSE IT WILL MESS THE SPECIES NAME
+for i in $(ls *reference.maf); do echo $i; grep -v "# hal" $i > ${i:0:(-4)}_fixed.maf & done
+
+
+msa_view -o SS --seqs Danio_rerio,Clupea_harengus,Sinocyclocheilus_grahami,Cyprinoidei,Pygocentrus_nattereri,Colossoma_macropomum,Electrophorus_electricus,Ictalurus_punctatus,Pangasianodon_hypophthalmus,Siluroidei,Anc01,Characiphysae,Otophysi,Otomorpha,Esox_lucius,Oryzias_latipes,Euteleosteomorpha,Clupeocephala mafs_chr_v2/chr1.maf > mafs_chr_wo_Ast/chr1_WO_AST_TREE.ss
+
+
+
+Extractin the complete alignment (remember that the *fixed.maf is in danrer10 reference)
+for i in $(ls *fixed.maf); do echo $i;  msa_view -o SS $i > ${i:0:(-4)}_complete_aln.ss & done
+
+
+###### 
+
+Comand for extracting the Aligments WO Ictalurus_punctatus
+
+Surface_Astyanax,Oryzias_latipes,Esox_lucius,Euteleosteomorpha,Clupea_harengus,Danio_rerio,Sinocyclocheilus_grahami,Cyprinoidei,Pangasianodon_hypophthalmus,Electrophorus_electricus,Anc01,Colossoma_macropomum,Pygocentrus_nattereri,Serrasalmidae,Cave_Astyanax,Anc02,Characoidei,Characiphysae,Otophysi,Otomorpha,Clupeocephala
+
+msa_view -o SS --seqs Surface_Astyanax,Oryzias_latipes,Esox_lucius,Euteleosteomorpha,Clupea_harengus,Danio_rerio,Sinocyclocheilus_grahami,Cyprinoidei,Pangasianodon_hypophthalmus,Electrophorus_electricus,Anc01,Colossoma_macropomum,Pygocentrus_nattereri,Serrasalmidae,Cave_Astyanax,Anc02,Characoidei,Characiphysae,Otophysi,Otomorpha,Clupeocephala mafs_chr_v2/chr1.maf > mafs_chr_wo/chr1_WO_AST_TREE.ss
+
+The actual foo loop that I used
+
+for i in $(ls mafs_chr_v2/*maf); do echo $i; msa_view -o SS --seqs Surface_Astyanax,Oryzias_latipes,Esox_lucius,Euteleosteomorpha,Clupea_harengus,Danio_rerio,Sinocyclocheilus_grahami,Cyprinoidei,Pangasianodon_hypophthalmus,Electrophorus_electricus,Anc01,Colossoma_macropomum,Pygocentrus_nattereri,Serrasalmidae,Cave_Astyanax,Anc02,Characoidei,Characiphysae,Otophysi,Otomorpha,Clupeocephala $i > mafs_chr_wo_IpCoco/${i:0:(-4)}_wo_IpCoco.ss & done
+
+## Command for merging the cons regions and filter them acording to Pollard et al 2006
+
+mergeBed -d 10 -i  2022_07_07_most_cons_regions_wo_Astyanax_danrer10_coord_v2.bed | awk 'BEGIN{OFS="\t"} ($3-$2)>100 {print $0}' > 2022_07_07_most_cons_regions_wo_Astyanax_danrer10_coord_v2_filtered_100bp.bed
+
+
+# filtering for non coding regions 
+mergeBed -d 10 -i 2022_02_01_most_cons_regions_wo_Cavefish.bed | awk 'BEGIN{OFS="\t"} ($3-$2)>100 {print $0}' | intersectBed -v -a stdin -b ../data/Astyanax_mexicanus.Astyanax_mexicanus-2.0.103_mod.gtf > 2022_07_19_most_cons_regions_wo_Cavefish_filtered_100bp_NonCoding.bed
+
+##### Analysis of Red bellied Piranha accelerated regions
+
+for i in $(ls mafs_chr_v2/*maf); do echo $i; msa_view -o SS --seqs Surface_Astyanax,Cave_Astyanax,Cyprinoidei,Colossoma_macropomum,Clupea_harengus,Sinocyclocheilus_grahami,Danio_rerio,Anc02,Characoidei,Electrophorus_electricus,Ictalurus_punctatus,Pangasianodon_hypophthalmus,Siluroidei,Anc01,Characiphysae,Otophysi,Otomorpha,Esox_lucius,Oryzias_latipes,Euteleosteomorpha,Clupeocephala $i > mafs_chr_wo_PigNat/${i:0:(-4)}_wo_PigNat.ss & done
+
+mergeBed -d 10 -i 2022_07_26_most_cons_regions_wo_PigNat.bed | awk 'BEGIN{OFS="\t"} ($3-$2)>100 {print $1, $2, $3, "peak_filt"NR, 0, "+"}' | intersectBed -v -a stdin -b ../data/Astyanax_mexicanus.Astyanax_mexicanus-2.0.103_mod.gtf > 2022_07_26_most_cons_regions_wo_PigNat_filt_100bp_merged_nonCoding.bed
+
