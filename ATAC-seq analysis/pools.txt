@@ -1,0 +1,17 @@
+PA-24hpf-2--AD-2-2-_RG_RG_dup.bam PS=10
+PA-24hpf-3--AD-2-3-_RG_RG_dup.bam PS=10
+PA-48hpf-2--AD-2-2-_RG_RG_dup.bam PS=10
+PA-48hpf-3--AD-2-3-_RG_RG_dup.bam PS=10
+PA-5ss-1--AD-2-4-_RG_RG_dup.bam PS=16
+PA-5ss-2--AD-2-5-_RG_RG_dup.bam PS=16
+PA-80--ep-1--AD-2-4-_RG_RG_dup.bam PS=30
+PA-80--ep-2--AD-2-5-_RG_RG_dup.bam PS=30
+SF-24hpf-2--AD-2-2-_RG_RG_dup.bam PS=10
+SF-24hpf-3--AD-2-3-_RG_RG_dup.bam PS=10
+SF-48hpf-2--AD-2-2-_RG_RG_dup.bam PS=10
+SF-48hpf-3--AD-2-3-_RG_RG_dup.bam PS=10
+SF-5ss-1--AD-2-4-_RG_RG_dup.bam PS=16
+SF-5ss-2--AD-2-5-_RG_RG_dup.bam PS=16
+SF-80--ep-1--AD-2-4-_RG_RG_dup.bam PS=30
+SF-80--ep-2--AD-2-3-_RG_RG_dup.bam PS=30
+SF-80--ep-3--AD-2-5-_RG_RG_dup.bam PS=30
