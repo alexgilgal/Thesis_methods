@@ -9,7 +9,7 @@ The main goal of this repository is to show the persons that read my PhD dissert
 
 
 ## Installation
-The use of the scripts requires several programs in order to run properly and reproduce the results. In order to save the user the tedious installation processes and the searching of the programs manually, we have generated conda recipes. These conda recipes can be used directly by users in order to generate ready-to-analyse conda environments. The only thing the user has to change from these recipes are the prefix variables.
+The use of the scripts requires several programs in order to run properly and reproduce the results. To save the user the tedious installation processes and the searching of the programs manually, we have generated conda recipes. These conda recipes can be used directly by users in order to generate ready-to-analyse conda environments. The only thing the user has to change from these recipes are the prefix variables.
 
 If you don't have Conda installed, we recommend using Anaconda (or Miniconda) to start. Check [this link](https://docs.conda.io/en/latest/miniconda.html) to install conda from Miniconda. 
 
@@ -19,7 +19,7 @@ Creating the environment for the ATAC-seq would be like this
 ```
 conda env create -f ATAC_env.yml
 ```
-Once you have created the environment, do not forget to activate the environment with:
+Once you have created the environment, do not forget to activate the environment with the following command:
 
 ```
 conda activate ATAC_env
@@ -30,17 +30,17 @@ With these steps, you have loaded all the necessary programs to reproduce all ou
 ## Contents
 
 #### **ATAC-seq analysis**
-In this folder you can find all the scripts necesary to reproduce ATAC-seq analyses. If you intend to use these scripts, please see above how to install the corresponding conda recipes.
+In this folder, you can find all the scripts necessary to reproduce ATAC-seq analyses. If you intend to use these scripts, please see above how to install the corresponding conda recipes.
 
 These scripts should be used in the following order (this is a suggestion):
 
 - **ATAC_pipe.pl:** This is our pipeline to map raw ATAC-seq and preprocess this data.
 - **idr_mod_job.sh**: This script identifies reproducible peaks between samples.
 - **ATAC_deseq2.R**: Using this script, the user can determine which peaks are differential between different conditions.
-- **homer_enrichment.sh**: This script can be used with any BED file, but we used it mainly with the differential peaks from the previous script. This provides the user with the enrichment analysis of TFBS in the regions of interests.
-- **combine_homer.R**: this script joints several Homer results in one dotplot for easy visualization of those results.
+- **homer_enrichment.sh**: This script can be used with any BED file, but we used it mainly with the differential peaks from the previous script. This provides the user with the enrichment analysis of TFBS in the regions of interest.
+- **combine_homer.R**: this script joints several Homer results in one dot plot for easy visualization of those results.
 
-Independently, the user can use script CRISP_calling.sh in order to call variants in ATAC-seq signal. Then the user can run the scripts inside the folder Motifbreak_tobias in order to understand how these variants affect TFBS and Tf binding to the DNA in certain conditions.
+Independently, the user can use the script CRISP_calling.sh in order to call variants in the ATAC-seq signal. Then the user can run the scripts inside the folder Motifbreak_tobias in order to understand how these variants affect TFBS and Tf binding to the DNA in certain conditions.
 
 
 
