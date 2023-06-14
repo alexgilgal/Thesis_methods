@@ -59,7 +59,7 @@ We have used two main strategies:
 - Associate gene to peaks. To do that, we have used the script **Gene_2_peaks.sh**. This script needs as input the folder where the BED files that will be analyzed (ATAC-seq peaks) are, and also a BED file of the TSS of the genes. This script will generate several TXT as output. the most important ones are the gene list of genes associated with peaks and the relationship of these peaks to the genes. Using this information, we could further analyze these integrated data.
 - Using ananse. In this folder, there is a pdf guide of how we used ananse for cavefish and how to use it with other organisms. The developer team of Ananse has done great work documenting their tool [here](https://anansepy.readthedocs.io/en/master/), so check the page for more information on how it works and how to use it.
 
-####**Comparative genomics**
+#### **Comparative genomics**
 
 This folder contains the commands and scripts used in order to generate our comparative genomics analyses. If the user wants to use Cactus, we recommend reading its documentation carefully [here](https://github.com/ComparativeGenomicsToolkit/cactus). We have also deposited the genome sources used in our analyses and their phylogenetic relationship in the tree_single.nw.
 The script rphast_analysis.R was used in order to compute conserved and accelerated regions between different species.
