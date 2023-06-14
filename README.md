@@ -45,13 +45,24 @@ Independently, the user can use the script CRISP_calling.sh in order to call var
 #### **RNA-seq analysis**
 This folder contains the scripts used for analysing RNA-seq and its results. Some of these analyses can be used with gene lists, independently if they have been generated with RNA-seq or not.
 
-In general we have followed the next steps:
+In general, we have followed the next steps:
 
 - **map_STAR_and_htseq.sh**: This script maps the RNA-seq raw data against the indexed reference genome and transcriptome. Once the reads are mapped, the count tables are generated using htseq.
-- **deseq_rnaseq.R**: Using this script we detected the genes that changed their expression between conditions. The result of this is a gene list of upregulated and downregulated genes.
+- **deseq_rnaseq.R**: Using this script, we detected the genes that changed their expression between conditions. The result of this is a gene list of upregulated and downregulated genes.
 - **Amphi_zebra_fams.R**: In the case of amphioxus, differentially expressed genes were also translated into zebrafish genes via orthogroups. The input of this function is the  gene IDs of amphioxus and a table containing the orthology information between amphioxus and zebrafish genes. This orthology table contains orthogroups, or gene families, to which each amphioxus and zebrafish gene belongs. For each amphioxus gene, the function identifies to which orthogroup this amphioxus gene belongs and retrieves the entire group of zebrafish genes that belong to the same orthogroup. Since zebrafish have undergone three rounds of WGDs, one amphioxus gene can have several zebrafish orthologs. 
 - **GO_enrichment.R**: Using this script, we determined the function of the gene lists used as input. For example, we determined the function of the differentially expressed genes. This script can be used with any gene list, not only differential genes.
 - **GO_dotplots.R**: The result of the previous script can be visualized using this script. this script takes several TXT GO tables produced by the previous script and aggregates them in a unique plot.
+
+#### **Integration_ATAC_RNA**
+The contents of this file allow us to join the results coming from ATAC and RNA-seq.
+We have used two main strategies:
+- Associate gene to peaks. To do that, we have used the script **Gene_2_peaks.sh**. This script needs as input the folder where the BED files that will be analyzed (ATAC-seq peaks) are, and also a BED file of the TSS of the genes. This script will generate several TXT as output. the most important ones are the gene list of genes associated with peaks and the relationship of these peaks to the genes. Using this information, we could further analyze these integrated data.
+- Using ananse. In this folder, there is a pdf guide of how we used ananse for cavefish and how to use it with other organisms. The developer team of Ananse has done great work documenting their tool [here](https://anansepy.readthedocs.io/en/master/), so check the page for more information on how it works and how to use it.
+
+##**Comparative genomics**##
+
+
+
 
 
 
