@@ -1,0 +1,408 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{pdfpages} 
+\usepackage{mathpazo} % Use the Palatino font by default
+% Use this page to put the citations within parenthesis: https://www.overleaf.com/learn/latex/Natbib_citation_styles
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+%\addbibresource{Zotero_refs} % The filename of the bibliography
+\addbibresource{Final_biblio}
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+% This is to include figures: https://www.overleaf.com/learn/latex/Inserting_Images#Positioning
+\usepackage{graphicx}
+\graphicspath{ {./Figures/} }
+\usepackage{epstopdf}
+
+% COMMENT THIS WHEN FINISHED
+%\epstopdfDeclareGraphicsRule{.pdf}{png}{.png}{convert #1 \OutputFile} % COMMENT THIS WHEN FINISHED
+%\DeclareGraphicsExtensions{.png,.pdf} % USE THIS LINE WHEN WRITTING
+\DeclareGraphicsExtensions{.pdf,.png} % USE THIS LINE FOR THE FINAL COMPILATION
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=b5paper, % Change to letterpaper for US letter
+	inner=16mm, % Inner margin
+	outer=24mm, % Outer margin
+	bindingoffset=10mm, % Binding offsetm m
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{The role of Cis-Regulatory elements during evolution at different evolutionary time points} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Juan Jesús Tena Aguilar} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{José Luis Gómez Skarmeta} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Alejandro Gil Gálvez} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Biological Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{https://www.upo.es}{Universidad Pablo de Olavide}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{{Centro Andaluz de Biología del Desarrollo}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{{Departament of Gene regulation and morphogenesis}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+\begin{document}
+%\hypersetup{colorlinks=false}
+%\includepdf[pages=1,fitpaper=true ]{Figures/portada.pdf}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+ 
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\href{https://orcid.org/0000-0002-1081-2673}{\authorname} % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+\href{https://orcid.org/0000-0001-8165-7984}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+
+\end{flushright}
+\end{minipage}\\[1cm]
+\emph{Posthumous supervisor:}
+\href{https://orcid.org/0000-0001-5125-4332}{\examname}
+\vfill
+
+\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\groupname\\\deptname\\[2cm] % Research group name and department name
+ 
+\vfill
+
+{\large \today}\\[4cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item This work was done wholly or mainly while in candidature for a research degree at this University.
+\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item Where I have consulted the published work of others, this is always clearly attributed.
+\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item I have acknowledged all main sources of help.
+\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+ 
+\noindent Signed:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+ 
+\noindent Date:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+\end{declaration}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\enquote{\itshape The most important words a man can say are, “I will do better.” These are not the most important words any man can say. I am a man, and they are what I needed to say.
+
+The ancient code of the Knights Radiant says “journey before destination.” Some may call it a simple platitude, but it is far more. A journey will have pain and failure. It is not only the steps forward that we must accept. It is the stumbles. The trials. The knowledge that we will fail. That we will hurt those around us.
+
+But if we stop, if we accept the person we are when we fall, the journey ends. That failure becomes our destination. To love the journey is to accept no such end. I have found, through painful experience, that the most important step a person can take is always the next one.}\bigbreak
+
+\hfill Brandon Sanderson, Oathbringer
+
+\bigbreak
+\bigbreak
+
+
+\noindent\enquote{\itshape Nunca le pidáis a la razón
+
+
+\noindent Lo que no va a darte el pecho}
+\hfill Vetusta Morla
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{Resumen} % Add the abstract to the table of contents
+
+
+
+La regulación transcripcional es un mecanismo clave en el complejo proceso de regulación génica. Este proceso permite controlar cuánto producto génico expresa, modifica o mantiene cada célula según sea necesario, afectando así la identidad celular. Esta regulación precisa ocurre debido a la interacción entre factores de transcripción y elementos reguladores \textit{cis}. Observar cómo la evolución ha moldeado los elementos de la regulación génica ofrece una visión fascinante de los mecanismos que impulsan la adaptación y la novedad evolutiva. En esta tesis, utilizamos técnicas epigenómicas y transcriptómicas para explorar el papel de los elementos reguladores \textit{cis} en diferentes escenarios evolutivos.
+
+En el primer escenario, abordamos cómo la regulación génica contribuye a la generación de novedades evolutivas en vertebrados. Para ello, utilizamos el anfioxo \textit{Branchiostoma lanceolatum}, el animal vivo más similar al ancestro de los cordados, y lo comparamos con nuestro modelo animal vertebrado, el pez cebra. Los genomas de los vertebrados han experimentado dos rondas de duplicaciones completas del genoma, aumentando el número de copias génicas y contribuyendo a una regulación génica más compleja. Para ver cómo la regulación génica ha influenciado en la transición de cordados a vertebrados, tratamos embriones de ambas especies para alterar vías de señalización conservadas. Esta alteración reveló que, en los vertebrados, los genes del desarrollo tienden a tener más elementos reguladores \textit{cis}, y que estos elementos integran más información regulatoria, lo que aumenta la interconectividad de las vías de señalización clave para el desarrollo. Este aumento de la interconectividad es esencial para la aparición de novedades morfológicas en los vertebrados.
+
+En el segundo escenario, exploramos el papel de los elementos reguladores \textit{cis} durante la adaptación a un nuevo entorno utilizando el pez \textit{Astyanax mexicanus} como organismo modelo. Este pez teleósteo tiene dos poblaciones bien diferenciadas. La población superficial vive en ríos y lagos de México. La población de peces de cueva ha conquistado sistemas de cuevas y ha experimentado varias adaptaciones fenotípicas para sobrevivir en ese entorno. Carecen de ojos y pigmentación, y han sufrido varios cambios metabólicos, acumulando más grasa que los peces de superficie. Estas adaptaciones ocurrieron en un período evolutivo corto e independientemente en diferentes comunidades de \textit{Astyanax}. Utilizamos epigenómica y transcriptómica para comprender cómo los elementos reguladores \textit{cis} han contribuido a esta adaptación rápida. Mediante este enfoque, descubrimos que la regulación de genes clave del desarrollo está alterada en los peces de cueva en comparación con los peces de superficie, lo que contribuye a esta adaptación. Además, encontramos cambios en los elementos reguladores \textit{cis} que son clave para explicar esta rápida adaptación, ya que alteran redes específicas de regulación génica, como las redes de desarrollo ocular.
+
+En conjunto, nuestros estudios demuestran la importancia de la regulación génica y cómo los cambios en los elementos reguladores \textit{cis} contribuyen a la generación de novedades evolutivas y adaptación durante el desarrollo. Nuestra comprensión de los mecanismos detrás de estos procesos proporciona información sobre cómo surge la diversidad biológica y cómo los organismos utilizan estos mecanismos para adaptarse a sus entornos.
+\end{abstract}
+
+\begin{abstractLite}
+
+\addchaptertocentry{\abstractname}
+
+Transcriptional regulation is a key mechanism in the complex process of gene regulation. This process makes it possible to control how much gene product each cell expresses, changes, or maintains as needed, thereby affecting cell identity. This tight regulation occurs because of the interplay between transcription factors and \textit{cis} regulatory elements. Observing how evolution has shaped the elements of gene regulation offers a fascinating view of the mechanisms that have driven adaptation and evolutionary novelty. In this thesis, we used epigenomic and transcriptomic techniques to explore the role of \textit{cis} regulatory elements in different evolutionary scenarios. 
+
+
+In the first scenario, we addressed how gene regulation contributes to the generation of evolutionary novelty in vertebrates. To do so, we used \textit{Branchiostoma lanceolatum} (amphioxus), which is more similar to the chordate ancestor and compared it to our vertebrate animal model, zebrafish. Vertebrate genomes have undergone two rounds of whole genome duplications, increasing the number of gene copies and contributing to more complex gene regulation. We treated embryos of both species to alter conserved signalling pathways. This alteration revealed that, in vertebrates, developmental genes tend to have more \textit{cis} regulatory elements, and that these elements integrate more regulatory information, and that this gain of regulatory information increases the interconnectivity of key developmental signalling pathways. This gain of interconnectivity is likely essential for the emergence of vertebrate morphological novelty.
+
+
+In the second scenario, we explored the role of \textit{cis} regulatory elements during adaptation to a new environment using \textit{Astyanax mexicanus} as a model organism. This teleost fish has two well-differentiated populations. The surface population lives in the rivers and lakes of Mexico. The cavefish population has conquered cave systems and has undergone several phenotypic adaptations to survive in that environment. They lack eyes and pigmentation and have undergone several metabolic changes, accumulating more fat than the surfacefish. These adaptations occurred in a short evolutionary period and independently in different \textit{Astyanax} communities. We used epigenomics and transcriptomics to understand how \textit{cis} regulatory elements have contributed to this rapid adaptation. Using this approach, we discovered that the regulation of key developmental genes is altered in cavefish compared to that in surfacefish, contributing to this adaptation. Furthermore, we found changes in \textit{cis} regulatory elements that are key to explaining this quick adaptation because they alter specific gene regulatory networks, such as eye developmental networks.
+
+
+Together, our studies demonstrate the importance of gene regulation and how changes in the \textit{cis} regulatory elements contribute to the generation of evolutionary novelties and adaptation during development. Our understanding of the mechanisms behind these processes provides insight into how biological diversity arises and how organisms use these mechanisms to adapt to their environments.
+\end{abstractLite}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+Como siempre, yo dejando las cosas para el final, porque sí, estoy escribiendo los agradecimientos un par de horas antes de depositar la tesis. Mucha gente dice eso de: “Y por último y no por ello menos importante...”. Y yo creo que la razón por la que he dejado esto para el final es precisamente por eso, porque sé que esta parte la considero importantísima, y me va a costar horrores hacerlo bien. Me voy a quedar cortísimo agradeciendo a la gente que me ha acompañado (aguantado podría ser incluso más correcto a veces) en este proceso que ha sido desarrollar y escribir la tesis. Esta tesis no habría salido adelante sin el apoyo de la gente que voy a mencionar a continuación, y seguramente me quedaré corto con algunas personas. Pero bueno, si yo pudiera expresar todo lo que siento con palabras pues habría elegido otra profesión, como, por ejemplo, no sé, escritor de novelas. Aquí va mi humilde intento de plantar en un papel todo mi agradecimiento a las personas que quiero y que hacen posible que cada día quiera ser un poquito mejor. Si os emocionáis con facilidad id cogiendo pañuelos, yo ya tengo un par.  
+
+Esta tesis no habría sido posible sin el apoyo incondicional que José Luis Skarmeta. Jose, muchísimas gracias por enseñarme gran parte de lo que he aprendido durante esta tesis. He aprendido muchísimo no sólo de Biología del Desarrollo y Evolución, sino también una manera de hacer ciencia. Gracias por enseñarme que es mejor ser generoso con el conocimiento, y que si el camino de la investigación se recorre junto a tus colegas en lugar de contra ellos, se llega muchísimo más lejos. Gracias también por transmitirme ese gran entusiasmo por la ciencia que te caracterizaba. Espero que este trabajo y la huella que he dejado en mis compañeros de viaje te gusten. Espero haberte sorprendido, allá donde estés. 
+
+Quiero agradecer también a Juan Tena, mi director de tesis, el haberme apoyado desde el principio de mis andaduras en el lab (aunque yo no haya tocado una pipeta, lo llamo lab). Incluso antes de que Jose nos dejara, ahí estaba Juan para resolver cualquier duda que tuviera o para dar su opinión sobre las cosas que íbamos descubriendo. Tras la muerte de Jose, peleó como un león para que todos tuviéramos un sitio en el lab y para que pudiésemos continuar nuestras trayectorias. Muchísimas gracias Juan por todo tu esfuerzo y por haberme enseñado tantísimo en esta etapa. 
+
+Well, now I have to switch languages, because the next person I want to acknowledge her work is Christina Paliou. Christina, thanks a lot for helping me during the last year of this thesis. I have learnt a lot from you, of your vision of how science should be done and transmitted. You have been tremendously inspiring, and I hope to have learned just a tiny part of your sight of things. Thanks a lot for teaching me how to write a thesis properly; I have enjoyed a lot discussing with you all my findings and how to put them in a readable manner. To anyone who is reading my thesis, if you can understand what I am saying in any part of it, it is because she had previously dealt with my writing skills. Moreover, she has been one of those persons that made the tough process of the thesis worth it. Christina, I’m glad I have known you and made you a friend in this process.  
+
+Por supuesto, también quiero agradecer a Espe, mi compañera de vida, el haberme aguantado durante este proceso que ha sido la tesis. Llevamos juntos mucho tiempo, y durante este tiempo hemos crecido muchísimo como personas juntos, y cada día me parece una maravilla ver cómo crecemos un poquito más sabios juntos. Hemos compartido muchísimos momentos maravillosos juntos, y espero vivir muchísimos más a tu lado. Pero no sólo ha habido momentos buenos y bonitos, también hemos sufrido bastantes cosas, pero siempre juntos. Cuando uno caía, lo levantaba el otro, y también ha habido veces que los dos estábamos hechos polvos por lo que sea, pero con mirarnos sabíamos una cosa que nos levantaba el ánimo: “Estamos destrozados, pero estamos juntos y eso nos basta”.  Sin ti, no podría haber hecho nada de esto. Te quiero con todo mi corazón en todas tus formas y estados. 
+
+También quiero agradecer a mi familia el haber estado ahí constantemente para mí. Gracias a ellos estoy donde estoy en este momento, y sin ellos nada de esto habría sido posible. Cuando era pequeño, me enseñasteis la importancia del esfuerzo, pero también de hacer las cosas con cariño y afecto por las personas que había a mi alrededor. Cuando ya era más mayorcito me fui de casa con vuestro apoyo, pero siempre enseñándome y aconsejándome en los nuevos retos que iban surgiendo. Conforme he ido ganando más independencia, seguíais ahí, mostrándome que siempre estaréis ahí para lo que haga falta. Por todo ello gracias, a mis padres, a mi hermano, a mis abuelos, a mis tíos y primos.  
+
+Pasamos a otro círculo de personas que me han acompañado desde relativamente chiquitito hasta hoy en día. A los autodenominados Chavale. Mi grupo de amigos de la infancia de Jerez, que me han acompañado durante muchos años. Somos unos pocos, pero siempre me he sentido arropado y querido por ellos desde que los conocí, allá por el instituto. Si la risa da la vida, esta gente son una fuente de inmortalidad. Siempre habéis estado ahí para echar unas risas, unas cervezas o lo que sea. También habéis estado en los momentos no tan buenos, y ahí es donde se demuestra que sois grandes personas y que podré contar con ustedes cuando lo necesite. Sois los mejores, espero seguir junto con ustedes bastante más tiempo. Gracias por estar ahí chavale. 
+
+No me han acompañado desde tan chiquitito, pero también han dejado una marca muy profunda en mí, haciendo posible que hoy esté aquí. Son la gente que conocí en la carrera, y que hoy en día me siguen dando la vida. Manolo, gracias por descubrirme a Vetusta Morla. Has hecho que mi gusto musical parezca un Frankenstein. Creo que puedo decir que ese Arenal que compartimos juntos es un punto de inflexión en mi vida, y ahí estabas tú. Marina, gracias por darme tantísimos momentos de risas y de cachondeo, y por enseñarme que, si algún programa tenía algún bug, ahí estabas tú para descubrirlo. Raquel, gracias por enseñarme la mayoría de bares y restaurantes que conozco de Triana. Eres una de las personas más polivalentes que conozco, gracias por enseñarme a ser un poquito más flexible y ser feliz en ello. Isa, gracias por enseñarme que se puede ser adorable y firme a la vez. Hemos compartido muchísimos momentos de risas y de guasa juntos y me encanta ese humor tan afilado que tienes. Sara, gracias por enseñarme que, aunque yo pensaba que sí, el entusiasmo no tiene límite ninguno.  Diana, muchísimas gracias por habernos acogidos a todos como si fuésemos de tu familia. Puedo decir sin ningún lugar a dudas que contigo cualquier sitio se siente como casa. Elena, Víctor y Maribel, aunque ya no nos veamos apenas, me habéis marcado muchísimo y quiero que sepáis que os llevo en un pedacito de mi corazón. 
+
+Hay mucha gente que he conocido durante la tesis, y han hecho que merezca la pena haber pasado por ella. Mis compañeras de tesis son un ejemplo de por qué ha merecido la pena todo esto. Cuando llegué al lab, Rafa, Magri y Sandra eran los más veteranos, y como tal, nos acogieron a los polluelos que éramos Marta Moreno, Lourdes y yo. Rafa, gracias por enseñarme tantísimas cosas. Me enseñaste a fijarme en la parte brillante de la ciencia y cuando la parte oscura acechaba, nos llevabas de cervezas para ocultarla un poquito. Con la inigualable ayuda de Magri, el duo mágico, hemos pasado muchísimos momentos de alegría y otros de no tanta. Siempre recordaré con muchísimo cariño todo lo que me habéis enseñado. Aunque la pandemia no nos dejó interactuar todo lo que hubiésemos querido, Alberto llegó al lab y me dejó una marca tremenda. Alberto, el hecho de que tengas el mismo nombre que mi hermano es casi profético, porque así es como te veo, un hermano con el que no comparto sangre, pero sí otras muchísimas cosas. Me hubiera gustado que nuestro tiempo juntos fuese más largo en el lab para investigar ideas locas que teníamos juntos. Contigo he aprendido muchísimo, no sólo de la ciencia, sino de la forma del mundo, y estoy eternamente agradecido por haberte conocido. 
+
+Uno de los legados más bonitos de Alberto al lab fue el grupo de los Té-sitos, porque nos juntábamos los doctorandos del lab a tomar té y básicamente a hacer terapia de grupo juntos. Lourdes, Marta y Ana, mis compis de tesis y de las penas que van asociadas, como rellenar el RAPI bien. Lourdes, deberíamos escucharte más, porque bueno, si no lo hacemos nos vas a convencer igual. Gracias por ser una compañera incansable de planes, y por ofrecer constantemente algún tipo de plan para que todos disfrutemos. Si nuestros caminos se separan voy a echar muchísimo de menos la mezcla entre franqueza abierta (los que no te conocen dirían bordería) y cariño que te caracterizan. Marta, nuestra gran anfitriona de nuestros encuentros de jueguitos de mesa. Gracias por ser una compañera tan generosa y promover el machine learning en los gatitos ;). También gracias por enseñarnos a todos a ser un poquito más independientes, y de cómo sobrevivir en el intento. Me ha encantado compartir este tiempo contigo y ver cómo ibas creciendo hacia la gran científica que eres hoy en día (y lo que queda). Igual que Rafa, Magri y Sandra nos acogieron a nosotros, nos llegó nuestro turno cuando llegó Ana Burgos al lab. Durante los dos años que llevas en el lab, nos has enseñado varias cosas a todos nosotros. Una de ellas es que el entusiasmo se contagia, y tú eres paciente 0 de entusiasmo. También nos has contagiado un pavo considerable, pero eso es otro tema. Gracias por recordarnos que hay muchas más cosas más allá de la ciencia en las que fijarse. Llegaste cuando estábamos un poquito en bucle y nos ayudaste a seguir adelante, o al menos así fue en mi caso. 
+
+También tengo otros compañeros de tesis, aunque no hayamos estado en el mismo lab. Ellos son Ana Alcaína, Ismael, Marbla, Raquel, Casi, Nibal y Ana Sousa. Muchísimas gracias por aguantarme estos años y por darme tantos momentos de alegría. Haberos conocido y hacerme vuestro amigo me deja el corazón calentito (y algunas veces la cabeza resacosa, pero eso es otra historia). Espero dejar la misma huella en vosotros. 
+
+Por el CABD también han pasado mucha gente que han hecho este camino más llano. Muchas gracias, Nacho e Isabel, ya que las discusiones científicas que teníamos en el Santa Clara valen mucho más para mí que bastantes sesiones de congresos científicos. Gracias por enseñarme tanto estos años y por los ratos que hemos pasado juntos. Martin, I am glad that we started in the lab exactly the same day. I have enjoyed a lot talking with you about science and how it should be done. I am grateful to see how you have archived several milestones, and I will be happy to see your bright future. Jose María, me alegro de haberte conocido estos años. Gracias a ti, veo cómo la tenacidad y el esfuerzo tienen su recompensa. Pedro, gracias por enseñarme a ser una mijita menos serio y que los bares cada vez sirven la cerveza menos fría. 
+
+Estoy seguro de que me que quedado corto con alguna gente y que es posible que incluso falte alguien. No pasa nada, esto es un papel y aquí no me expreso todo lo bien que quiero. Espero haber mostrado una pequeña porción de lo agradecido que estoy con toda esta gente que ha hecho posible que esté aquí. 
+
+Gracias a todos. 
+
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+%\listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+\textbf{AP} & \textbf{A}ntero\textbf{P}osterior \\
+\textbf{ATAC} & \textbf{A}ssay for \textbf{T}ransposase-\textbf{A}ccessible \textbf{C}hromatin \\
+\textbf{BMP} & \textbf{B}one \textbf{M}orphogenetic \textbf{P}rotein \\
+\textbf{ChIP} & \textbf{Ch}romatin \textbf{I}mmunopreci\textbf{P}itation \\
+\textbf{CRE} & \textbf{C}is-\textbf{R}egulatory \textbf{E}lement \\
+\textbf{DAR} & \textbf{D}ifferentially \textbf{A}ccessible \textbf{R}egions\\
+\textbf{DNA} & \textbf{D}eoxyribo\textbf{N}ucleic \textbf{A}cid \\
+\textbf{DSG} & \textbf{D}ouble-\textbf{S}elected \textbf{G}ene\\
+\textbf{FC} & \textbf{F}old \textbf{C}hange\\
+\textbf{FGF} & \textbf{F}ibro\textbf{G}rowth \textbf{F}actor \\
+\textbf{FGFR} & \textbf{F}ibro\textbf{G}rowth \textbf{F}actor \textbf{R}eceptor \\
+\textbf{GO} & \textbf{G}ene \textbf{O}ntology\\
+\textbf{GRN} & \textbf{G}ene \textbf{R}egulatory \textbf{N}etwork \\
+\textbf{mRNA} & \textbf{m}essenger \textbf{R}ibo\textbf{N}ucleic \textbf{A}cid\\
+\textbf{NGS} & \textbf{N}ext-\textbf{G}eneration \textbf{S}equencing \\
+\textbf{NICHD} & \textbf{N}ational \textbf{I}nstitute of \textbf{C}hild \textbf{H}ealth and \textbf{D}evelopment \\
+\textbf{NIH} & \textbf{N}ational \textbf{I}nstitutes of \textbf{H}ealth \\
+\textbf{PIC} & \textbf{P}re-\textbf{I}nitiation \textbf{C}omplex \\
+\textbf{PWM} & \textbf{P}osition-\textbf{W}eight \textbf{M}atrix \\
+\textbf{QC} & \textbf{Q}uality \textbf{C}ontrol \\
+\textbf{QTL} & \textbf{Q}uantitative \textbf{T}rait \textbf{L}ocus \\
+\textbf{RA} & \textbf{R}etinoic \textbf{A}cid \\
+\textbf{RAR} & \textbf{R}etinoic \textbf{A}cid \textbf{R}eceptor \\
+\textbf{RARE} & \textbf{R}etinoic \textbf{A}cid \textbf{R}esponse \textbf{E}lement \\
+\textbf{RL} & \textbf{R}egulatory \textbf{L}andscape \\
+\textbf{RNA} & \textbf{R}ibo\textbf{N}ucleic \textbf{A}cid \\
+\textbf{RXR} & \textbf{R}etinoid \textbf{X} \textbf{R}eceptor \\
+\textbf{SHH} & \textbf{S}onic \textbf{H}edge\textbf{H}og \\
+\textbf{SNP} & \textbf{S}ingle \textbf{N}ucleotide \textbf{P}olymorphism \\
+\textbf{STAT} & \textbf{S}ignal \textbf{T}ransducer and \textbf{A}ctivator of \textbf{T}ranscription \\
+\textbf{TAD} & \textbf{T}opologically \textbf{A}ssociating \textbf{D}omain \\
+\textbf{TF} & \textbf{T}ranscription \textbf{F}actor \\
+\textbf{TFBS} & \textbf{T}ranscription \textbf{F}actor \textbf{B}inding \textbf{S}ite \\
+\textbf{TGF} & \textbf{T}ransforming \textbf{G}rowth \textbf{F}actor \\
+\textbf{TPM} & \textbf{T}ranscripts \textbf{P}er \textbf{M}illion\\
+\textbf{TSS} & \textbf{T}ranscription \textbf{S}tart \textbf{S}ite \\
+\textbf{WGD} & \textbf{W}hole \textbf{G}enome \textbf{D}uplication \\
+\textbf{WT} & \textbf{W}ild \textbf{T}ype
+
+\end{abbreviations}
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%\begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
+
+% The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
+
+%Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
+%Constant Name & $Symbol$ & $Constant Value$ with units\\
+
+%\end{constants}
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+%\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+
+%$a$ & distance & \si{\meter} \\
+%$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+%Symbol & Name & Unit \\
+
+%\addlinespace % Gap to separate the Roman symbols from the Greek
+
+%$\omega$ & angular frequency & \si{\radian} \\
+
+%\end{symbols}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedicado a mi familia} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{chapters/01_chapter_Intro}
+\include{chapters/02_objectives}
+
+\include{chapters/03_drugs_results.tex}
+\include{chapters/04_Astyanax_results.tex}
+\include{chapters/05_Discussion}
+\include{chapters/06_Conclusions}
+\include{chapters/chapter_Methods}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+%\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  
